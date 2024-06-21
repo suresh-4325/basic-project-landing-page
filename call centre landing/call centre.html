@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Center Landing Page</title>
+    <style>
+        /* Basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header h1 {
+            margin-left: 1rem;
+            transition: color 0.3s ease-in-out;
+        }
+
+        header h1:hover {
+            color: #ff6347;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-right: 1rem;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #ff6347;
+        }
+
+        main .hero {
+            background: url('https://via.placeholder.com/1200x500') no-repeat center center/cover;
+            color: #fff;
+            padding: 5rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        main .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: slideInLeft 1s ease-in-out;
+        }
+
+        main .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            animation: slideInRight 1s ease-in-out;
+        }
+
+        main .hero button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            color: #fff;
+            background: #333;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        main .hero button:hover {
+            background: #ff6347;
+            transform: scale(1.1);
+        }
+
+        .services {
+            background: #f4f4f4;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .services h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .services .service-card-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .services .service-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            margin: 1rem;
+        }
+
+        .services .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .services .service-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+        }
+
+        .services .service-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .services .service-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .services .service-card i {
+            font-size: 2rem;
+            color: #ff6347;
+            margin-bottom: 1rem;
+        }
+
+        .about {
+            background: #fff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .about h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonials {
+            background: #fff;
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .testimonials h3 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        footer .social-icons {
+            margin: 1rem 0;
+        }
+
+        footer .social-icons a {
+            color: #fff;
+            margin: 0 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        footer .social-icons a:hover {
+            color: #ff6347;
+        }
+
+        footer p {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><i class="fas fa-headset"></i> Call Center Services</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="#services"><i class="fas fa-concierge-bell"></i> Services</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="hero" style="background: url('https://images.pexels.com/photos/7709189/pexels-photo-7709189.jpeg?auto=compress&cs=tinysrgb&w=600') no-repeat center center/cover;">
+            <h2>Reliable Customer Support</h2>
+            <p>We provide top-notch support to ensure your customers are always happy.</p>
+            <button id="cta-button"><i class="fas fa-phone"></i> Get Started</button>
+        </div>
+        <section class="services" id="services">
+            <h3>Our Services</h3>
+            <div class="service-card-container">
+                <div class="service-card">
+                    <i class="fas fa-headset"></i>
+                    <img src="https://via.placeholder.com/80" alt="24/7 Support">
+                    <h4>24/7 Support</h4>
+                    <p>Our team is available around the clock to assist your customers.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-comments"></i>
+                    <img src="https://via.placeholder.com/80" alt="Live Chat">
+                    <h4>Live Chat</h4>
+                    <p>Engage with your customers in real-time through our chat support.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <img src="https://via.placeholder.com/80" alt="Call Forwarding">
+                    <h4>Call Forwarding</h4>
+                    <p>Efficiently handle incoming calls by forwarding them to the right departments.</p>
+                </div>
+                
+            </div>
+        </section>
+       
+        <section class="testimonials">
+            <h3>Testimonials</h3>
+            <div class="card-container">
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="John Doe">
+                    <h4>John Doe</h4>
+                    <p>"Excellent service! The support team went above and beyond to assist us."</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Jane Smith">
+                    <h4>Jane Smith</h4>
+                    <p>"I'm impressed with how quickly they resolved my issue. Highly recommended!"</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/100" alt="Michael Johnson">
+                    <h4>Michael Johnson</h4>
+                    <p>"The team is very professional and courteous. They truly care about their customers."</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Call Center Services. All rights reserved.</p>
+    </footer>
+    <script>
+        // JavaScript for smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
